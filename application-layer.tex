@@ -103,6 +103,7 @@
 \item CC: Carbon Copy
 \item BCC: Blinb Carbon Copy
 \item Mailboxes
+\item On top of TCP, port 25
 \end{card}
 % All Commands?
 
@@ -113,6 +114,7 @@
 \begin{card}{WWW}
 \item Abstract collection of information in hypertext, connected through hyperlinks
 \end{card}
+
 
 \full{Post Office Protocol}
 \begin{card}{POP}
@@ -128,14 +130,80 @@
 \end{card}
 % All Commands?
 
+
 \full{Dynamic Host Configuration Protocol}
 \begin{card}{DHCP}
 \item Address leases
 \item Phases: Discovery, Acquirement, Renewal or Release
 \item Client has no IP yet: broadcast.
+\item On top of UPD
 \end{card}
 
+
 %ARP
+
+
+\full{Wake on LAN}
+\begin{card}{WoL}
+\item Wake up a computer from standby via network
+\item On top of UDP
+\end{card}
+
+%P2P apps
+%\begin{card}{Napster}
+%\item Peer to Peer App
+%\item Each user uploads list of available files.
+%\item Free
+%\item Large scale music download service
+%\end{card}
+
+%SETI@Home
+%GIMPS
+%BOINC
+
+
+\full{ }
+\begin{card}{Gnutella}
+\item Phases: Connection, Search, File transfer
+\item unstructured, decentralised, overlay network
+\item Fully decentralized P2P network
+\item Search horizon
+\item Difference between 0.4 and 0.6: super-nodes
+\item On top of TCP
+\item Designed for resource discovery
+%Messages?
+\end{card}
+
+
+\begin{card}{Chord}
+\item Fully decentralized P2P network
+\item Nodes in ring
+\item Problem: file can end up on any server
+\item $\log(N)$ entries in each routing table
+\item Designed for efficient object routing
+\end{card}
+
+
+\full{ }
+\begin{card}{Bittorrent}
+\item Uses web infrastructure
+\item Location discovery: Torrent providers trackers that knows swarm of peers addresses
+\item Location discovery: File is broken down in chunks, each identified by hash
+\item Optimizes availability: Peers download rarest chunks first
+\item Incentive to upload: Tit for tat, free-riders are choked
+\item Designed for efficient content distribution
+\end{card}
+
+
+\full{ }
+\full{The Onion Router}
+\begin{card}{TOR}
+\item Messages are encrypted as they travel along onion routers
+\item Each router removes a layer of encryption to reveal next hop
+\item Routers don't know: origin, destination or content
+\item Client is Onion Proxy(OP) but not an Onion Router(OR)
+\item Traffic encapsulatedin cells
+\end{card}
 
 
 
