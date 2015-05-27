@@ -1,0 +1,84 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\small
+
+\layer{Link}
+
+\begin{card}{Frame}
+\item Unit of data in the link layer.
+\item Structure: header,data,trailer
+\end{card}
+
+\begin{card}{Byte count framing}
+\item Method for framing
+\item Start the beginning of each frame with a length field.
+\item Problem: no way of resynchronising after an error.
+\end{card}
+
+\begin{card}{Byte stuffing}
+\item Method for framing
+\item Add a flag to the beginning and end of each frame and escape any data that contains that flag.
+\end{card}
+
+\begin{card}{Bit stuffing}
+\item Flag of six consecutive flags
+\item Sender and receivers fix the message to escape flags
+\item Good: Less overhead than with byte stuffing.
+\item Problem: Frame lengths are not fun to work with.
+\end{card}
+
+\full{Point-to-Point Protocol}
+\begin{card}{PPP}
+\item Used to frame IP packets over bytestreams.
+\item Uses byte stuffing.
+\end{card}
+
+\full{Cyclic Redundancy Check}
+\begin{card}{CRC}
+\item Error detection with cyclic codes.
+\item Used in Ethernet, 802.11, ADSL, Cable,...
+\end{card}
+
+\full{(Assymmetric) Digital Subscriber Line}
+\begin{card}{(A)DSL}
+\item Used to transmit data over telephone lines.
+\item It uses the otherwise unused higher frequency bands for data.
+\end{card}
+
+\full{Automatic Repeat reQuest}
+\begin{card}{ARQ}
+\item Used when errors are common or need to be corrected: Wifi, TCP, ...
+\item Receiver acknowledges correct frames.
+\item Sender resends after timeout.
+\end{card}
+
+\full{}
+\begin{card}{Stop and Wait}
+\item ARQ with one bit sequence numbers.
+\end{card}
+
+\begin{card}{Multiplexing}
+\item Just a fancy word for sharing, usually a network.
+\item Good for continuously used channels.
+\end{card}
+
+\full{Time Division Multiplexing}
+\begin{card}{TDM}
+\item Sharing the network (channel/link) over time.
+\end{card}
+
+\full{Frequency Division Multiplexing}
+\begin{card}{FDM}
+\item Sharing the network by putting users on different frequency bands.
+\item Used in television and radio stations.
+\end{card}
+
+%\begin{card}{}
+%\end{card}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
