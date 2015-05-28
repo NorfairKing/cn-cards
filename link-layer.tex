@@ -1,0 +1,207 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\small
+
+\layer{Data-Link}
+
+\begin{card}{Frame}
+\item Unit of data in the link layer.
+\item Structure: header,data,trailer
+\item Destination address first in header so that receivers can see whether the packet is for them.
+\end{card}
+
+\begin{card}{Byte count framing}
+\item Method for framing
+\item Start the beginning of each frame with a length field.
+\item Problem: no way of resynchronising after an error.
+\end{card}
+
+\begin{card}{Byte stuffing}
+\item Method for framing
+\item Add a flag to the beginning and end of each frame and escape any data that contains that flag.
+\end{card}
+
+\begin{card}{Bit stuffing}
+\item Flag of six consecutive flags
+\item Sender and receivers fix the message to escape flags
+\item Good: Less overhead than with byte stuffing.
+\item Problem: Frame lengths are not fun to work with.
+\end{card}
+
+\full{Point-to-Point Protocol}
+\begin{card}{PPP}
+\item Used to frame IP packets over bytestreams.
+\item Uses byte stuffing.
+\end{card}
+
+\full{Cyclic Redundancy Check}
+\begin{card}{CRC}
+\item Error detection with cyclic codes.
+\item Used in Ethernet, 802.11, ADSL, Cable,...
+\end{card}
+
+\full{(Assymmetric) Digital Subscriber Line}
+\begin{card}{(A)DSL}
+\item Used to transmit data over telephone lines.
+\item It uses the otherwise unused higher frequency bands for data.
+\end{card}
+
+\full{Automatic Repeat reQuest}
+\begin{card}{ARQ}
+\item Used when errors are common or need to be corrected: Wifi, TCP, ...
+\item Receiver acknowledges correct frames.
+\item Sender resends after timeout.
+\end{card}
+
+\full{}
+\begin{card}{Stop and Wait}
+\item ARQ with one bit sequence numbers.
+\end{card}
+
+\begin{card}{Multiplexing}
+\item Just a fancy word for sharing, usually a network.
+\item Good for continuously used channels.
+\end{card}
+
+\full{Time Division Multiplexing}
+\begin{card}{TDM}
+\item Sharing the network (channel/link) over time.
+\end{card}
+
+\full{Frequency Division Multiplexing}
+\begin{card}{FDM}
+\item Sharing the network by putting users on different frequency bands.
+\item Used in television and radio stations.
+\end{card}
+
+\full{Randomized Multiple Access Control}
+\begin{card}{RMAC}
+\item A strategy for controlling which node gets to used a shared link.
+\item Basic idea: Send when you have traffic, resend randomly later if collision.
+\end{card}
+
+\full{}
+\begin{card}{ALOHA}
+\item Computer network for Hawaian islands.
+\item Send when you have traffic, resend randomly later if collision.
+\item Very simple, works well under low load.
+\item Highly inefficient under high load.
+\item Slotted version increases maximum efficiency from 18\% to 36\%
+\end{card}
+
+\full{Carrier Sense Multiple Access}
+\begin{card}{CSMA}
+\item Like ALOHA, but listens before sending.
+\item This is easy when wired, not so much wireless.
+\item Still possible to have collisions because of delay.
+\item Only a good defense against collisions when bandwidth-delay product is less than one packet.
+\item Very simple, works well under low load.
+\item Highly inefficient under high load.
+\end{card}
+
+\full{Carrier Sense Multiple Access with Collision Detection}
+\begin{card}{CSMA/CD}
+\item Reduces the cost of collisions by detecting them and aborting (jam) rest of frame time.
+\item Time window for node to hear of collision is $2\times delay$
+\item Impose a minimum frame size that takes at least $2\times delay$ seconds to send so a node can't finish before a collision if one is going to happen.
+\end{card}
+
+\begin{card}{Classic ethernet}
+\item All nodes share one coaxial cable.
+\item Uses 1-persistent CSMA/CD with BEB
+\item No Ack or retransmissions
+\item IEEE 802.3
+\end{card}
+
+\full{Binary Exponential Backoff}
+\begin{card}{BEB}
+\item Heuristic for estimating how long to wait after a frame collision by estimating the amount of nodes on a link.
+\item BEB doubles the waiting interval for each successive collision.
+\item Very efficient in practice because the wait time quickly gets large enough to work.
+\end{card}
+
+\full{}
+\begin{card}{Modern ethernet}
+\item Based on switches
+\item Also called switched ethernet.
+\end{card}
+
+\full{Wireless Multiple Access Control}
+\begin{card}{WMAC}
+\item Nodes can't hear when sending, can't detect collisions: No CSMD/CD!
+\end{card}
+
+\full{Multiple Access Control with Collision Avoidance}
+\begin{card}{MACA}
+\item Short handshake:
+    \begin{enumerate}
+        \item Sender: Request to send? (RTS) (with frame length)
+        \item Receiver: Clear to send! (CTS) (with frame length)
+        \item Sender transmits while other nodes that heard CTS stay quiet.
+    \end{enumerate}
+\item Solves both exposed terminals and hidden terminals.
+\end{card}
+
+\full{Access Point}
+\begin{card}{AP}
+\item Access point for connectivity with rest of internet in a WiFi schema.
+\end{card}
+
+\full{}
+\begin{card}{WiFi}
+\item Has a MAC problem for access to access point
+\item CSMA/CA, RTS/CTS optional.
+\item Acks and retransmissions.
+\item Three addresses due to AP
+\item IEEE 802.11
+\end{card}
+
+\full{Carrier Sense Multiple Access Controll with Collision Avoidance}
+\begin{card}{CSMA/CA}
+\item Like MACA, but avoids collisions by inserting small random gaps instead of RTS/CTS.
+\end{card}
+
+\full{Contention-Free Multiple Access}
+\begin{card}{CFMA}
+\item Based on 'turn taking': Token is passed around.
+\item Fixed (higher) overhead with no collisions: predictable service.
+\item Better than CSMA under high load.
+\item More complex than CSMA, more things can go wrong.
+\end{card}
+
+\full{}
+\begin{card}{Switch}
+\item Basis of modern (switched) ethernet.
+\item Uses frame addresses to connect input to output ports.
+\item Multiple frames may be switched in parallel.
+\item Need buffers so loss is possible.
+\item More reliable than classic ethernet.
+\item Offers scalable performance.
+\end{card}
+
+\full{}
+\begin{card}{Backward learning}
+\item The way that switches find out where to send frames.
+\item To fill the table: look at source adresses on input frames.
+\item To forward: look up or else broadcast.
+\item Works with any number of switches and hubs if there are no loops in the topology (or it uses a switch spanning tree).
+\end{card}
+
+\full{}
+\begin{card}{Switch Spanning Tree}
+\item Switches collectively agree on spanning tree.
+\item Allows for loops in topology.
+\end{card}
+
+\full{Network Allocation Vector}
+\begin{card}{NAV}
+\item Used in WiFi 802.11
+\item Each frame carries a NAV field field that says how long the transmission sequence will take. (Frame + Ack)
+\end{card}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,29 @@
+\documentclass[avery5371,grid,10pt]{flashcards}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+
+% For the commit in title page
+\immediate\write18{git rev-parse --short HEAD > commit.tex}
+
+\input{packages}
+\input{header}
+\setlength\itemsep{1em}
+
+\begin{document}
+\input{titlepage}
+
+\subfile{rules}
+
+\newpage
+\small
+\subfile{physical-layer}
+\subfile{link-layer}
+\subfile{application-layer}
+\subfile{misc}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,215 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\small
+
+\layer{Application}
+
+
+\begin{card}{Telnet}
+\item Oldest internet application: 1983
+\item Useful for debugging protocols on TCP
+\item Local and remote login
+\item Phases: Connection management, (optional) Negotiation, Control, Data Transfer
+\item On top of TCP, port 25
+\end{card}
+
+
+\full{Hyper Text Transfer Protocol}
+\begin{card}{HTTP}
+\item On top of TCP, port 80
+%Headers?
+%Commands?
+% \item GET - retrieve document specified by URL
+% \item PUT - store specified document under given URL
+% \item HEAD - retrieve header from doc. specified by URL
+% \item OPTIONS - retrieve information about available options
+% \item POST - give information to the server
+% \item DELETE - remove document specified by URL
+% \item Difference between 1.0 and 1.1
+\end{card}
+
+ 
+\full{Hyper Text Markup Language}
+\begin{card}{HTML}
+\item 
+\end{card}
+
+
+\full{Cascading Style Sheets}
+\begin{card}{CSS}
+\item 
+\end{card}
+
+%CGI - Common gateway interface
+%PHP - Hypertext Preprocessor
+%AJAX - Asynchronous JavaScrip and XML
+
+
+\full{File Transfer Protocol}
+\begin{card}{FTP}
+\item On top of TCP, port 21 for control, 22 for data
+\item Control port uses telnet to negotiate session
+\end{card}
+% All Commands?
+
+\full{ }
+\begin{card}{DNS}
+\item Hierarchical, domain-based naming scheme.
+\item Maps domeain names into resource records: name resolution
+\item Nonoverlapping zones with each their own server(s)
+\item Anycast routing
+\item Authorative or cached records.
+\item Recursive queries at local name server, iterative queries at others
+\item On top of UDP
+\end{card}
+
+
+\full{Electronic Mail}
+\begin{card}{EMail}
+\item Message = Enveloppe + Header + Body
+\item Adress = user@dns-address
+\end{card}
+
+
+\full{Universal Resource Identifier}
+\begin{card}{URI}
+\item 
+\end{card}
+
+
+\full{Uniform Resource Locator}
+\begin{card}{URL}
+\item Information on how to locate a resource
+\item Sturcture: protorol://server/resource
+\end{card}
+
+
+\full{Uniforum Recource Name}
+\begin{card}{URN}
+\item Information on the name of a resource
+\end{card}
+
+
+\full{Standardized General Markup Language}
+\begin{card}{SGML}
+\item 
+\end{card}
+
+
+\full{Simple Mail Transfer Protocol}
+\begin{card}{SMTP}
+\item Phases: Handshaking, Transfer  of  messages, Closure
+\item Mail submission and message transfer
+\item CC: Carbon Copy
+\item BCC: Blinb Carbon Copy
+\item Mailboxes
+\item On top of TCP, port 25
+\end{card}
+% All Commands?
+
+% MIME
+
+
+\full{World Wide Web}
+\begin{card}{WWW}
+\item Abstract collection of information in hypertext, connected through hyperlinks
+\end{card}
+
+
+\full{Post Office Protocol}
+\begin{card}{POP}
+\item Final delivery of mail
+\item unsynchronized
+\end{card}
+
+
+\full{Internet Message Access Protocol}
+\begin{card}{IMAP}
+\item Final delivery of mail
+\item synchronzed
+\end{card}
+% All Commands?
+
+
+\full{Dynamic Host Configuration Protocol}
+\begin{card}{DHCP}
+\item Address leases
+\item Phases: Discovery, Acquirement, Renewal or Release
+\item Client has no IP yet: broadcast.
+\item On top of UPD
+\end{card}
+
+
+%ARP
+
+
+\full{Wake on LAN}
+\begin{card}{WoL}
+\item Wake up a computer from standby via network
+\item On top of UDP
+\end{card}
+
+%P2P apps
+%\begin{card}{Napster}
+%\item Peer to Peer App
+%\item Each user uploads list of available files.
+%\item Free
+%\item Large scale music download service
+%\end{card}
+
+%SETI@Home
+%GIMPS
+%BOINC
+
+
+\full{ }
+\begin{card}{Gnutella}
+\item Phases: Connection, Search, File transfer
+\item unstructured, decentralised, overlay network
+\item Fully decentralized P2P network
+\item Search horizon
+\item Difference between 0.4 and 0.6: super-nodes
+\item On top of TCP
+\item Designed for resource discovery
+%Messages?
+\end{card}
+
+
+\begin{card}{Chord}
+\item Fully decentralized P2P network
+\item Nodes in ring
+\item Problem: file can end up on any server
+\item $\log(N)$ entries in each routing table
+\item Designed for efficient object routing
+\end{card}
+
+
+\full{ }
+\begin{card}{Bittorrent}
+\item Uses web infrastructure
+\item Location discovery: Torrent providers trackers that knows swarm of peers addresses
+\item Location discovery: File is broken down in chunks, each identified by hash
+\item Optimizes availability: Peers download rarest chunks first
+\item Incentive to upload: Tit for tat, free-riders are choked
+\item Designed for efficient content distribution
+\end{card}
+
+
+\full{ }
+\full{The Onion Router}
+\begin{card}{TOR}
+\item Messages are encrypted as they travel along onion routers
+\item Each router removes a layer of encryption to reveal next hop
+\item Routers don't know: origin, destination or content
+\item Client is Onion Proxy(OP) but not an Onion Router(OR)
+\item Traffic encapsulatedin cells
+\end{card}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

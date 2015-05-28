@@ -1,0 +1,35 @@
+\newcommand{\hint}[1]{Hint: #1}
+
+%\cardfrontstyle{empty}
+\cardbackstyle{empty}
+
+
+\newcommand{\layer}[1]{\def \cardlayer {#1}}
+\newcommand{\full}[1]{\def \cardfull {#1}}
+
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\newenvironment{card}[1]
+{
+  \begin{flashcard}{#1}
+  \begin{minipage}{0.65\textwidth}
+  \flushleft
+  \cardfull
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.34\textwidth}
+  \flushright
+  \cardlayer
+  \end{minipage}
+
+  \vspace{5pt}
+  \begin{itemize}
+}
+{  
+  \end{itemize}
+
+  \end{flashcard} 
+  \full{}
+}
+
+\full{}
+\layer{}

@@ -1,3 +1,15 @@
+# Compiled pdfs
+*.pdf
+
+# Not the commit
+commit.tex
+
+# more files around latex and emacs
+_region_.tex
+auto/
+.fmt
+*.auxlock
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

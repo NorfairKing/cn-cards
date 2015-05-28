@@ -1,0 +1,55 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\small
+
+\layer{Physical}
+
+\begin{card}{Rate}
+\item A measure of the speed by which bits are transferred across a channel
+\item Measured in $bps$
+\end{card}
+
+
+\begin{card}{Latency}
+\item Latency is the combination of transmission delay and propagation delay.
+\item transmission delay = time to put an $n$ bit message on the channel: $n/rate$
+\item propagation delay = time for signal to propagate across the channel: $n/speed$
+\item Measured in seconds
+\end{card}
+
+\begin{card}{Bandwidth-Delay}
+\item A measure for the amount of data in flight.
+\item Calculated as $rate \times delay$.
+\item Measured in bits
+\end{card}
+
+\begin{card}{Bandwidth}
+\item Electrical engineering definition: width of frequency band
+\item Computer science definition: information carrying capacity: $bits/sec$
+\end{card}
+
+\full{Round Trip Time}
+\begin{card}{RTT}
+\item The time it takes for a response to arrive.
+\item Computed as $2\times delay$.
+\end{card}
+
+\full{Signal to Noise Ratio}
+\begin{card}{SNR}
+\item A measure for how efficient a signal is at carrying information.
+\item Computed as $(signal + noise)/signal$
+\end{card}
+
+\full{}
+\begin{card}{Hub}
+\item Also called a repeater.
+\item Forwards any incoming signal to all the other ports.
+\item Equivalent to linking up all the nodes on one line.
+\end{card}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
