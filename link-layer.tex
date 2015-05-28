@@ -28,32 +28,27 @@
 \item Problem: Frame lengths are not fun to work with.
 \end{card}
 
-\full{Point-to-Point Protocol}
-\begin{card}{PPP}
+\begin{card}[Point-to-Point Protocol]{PPP}
 \item Used to frame IP packets over bytestreams.
 \item Uses byte stuffing.
 \end{card}
 
-\full{Cyclic Redundancy Check}
-\begin{card}{CRC}
+\begin{card}[Cyclic Redundancy Check]{CRC}
 \item Error detection with cyclic codes.
 \item Used in Ethernet, 802.11, ADSL, Cable,...
 \end{card}
 
-\full{(Assymmetric) Digital Subscriber Line}
-\begin{card}{(A)DSL}
+\begin{card}[(Assymmetric) Digital Subscriber Line]{(A)DSL}
 \item Used to transmit data over telephone lines.
 \item It uses the otherwise unused higher frequency bands for data.
 \end{card}
 
-\full{Automatic Repeat reQuest}
-\begin{card}{ARQ}
+\begin{card}[Automatic Repeat reQuest]{ARQ}
 \item Used when errors are common or need to be corrected: Wifi, TCP, ...
 \item Receiver acknowledges correct frames.
 \item Sender resends after timeout.
 \end{card}
 
-\full{}
 \begin{card}{Stop and Wait}
 \item ARQ with one bit sequence numbers.
 \end{card}
@@ -63,24 +58,20 @@
 \item Good for continuously used channels.
 \end{card}
 
-\full{Time Division Multiplexing}
-\begin{card}{TDM}
+\begin{card}[Time Division Multiplexing]{TDM}
 \item Sharing the network (channel/link) over time.
 \end{card}
 
-\full{Frequency Division Multiplexing}
-\begin{card}{FDM}
+\begin{card}[Frequency Division Multiplexing]{FDM}
 \item Sharing the network by putting users on different frequency bands.
 \item Used in television and radio stations.
 \end{card}
 
-\full{Randomized Multiple Access Control}
-\begin{card}{RMAC}
+\begin{card}[Randomized Multiple Access Control]{RMAC}
 \item A strategy for controlling which node gets to used a shared link.
 \item Basic idea: Send when you have traffic, resend randomly later if collision.
 \end{card}
 
-\full{}
 \begin{card}{ALOHA}
 \item Computer network for Hawaian islands.
 \item Send when you have traffic, resend randomly later if collision.
@@ -89,8 +80,7 @@
 \item Slotted version increases maximum efficiency from 18\% to 36\%
 \end{card}
 
-\full{Carrier Sense Multiple Access}
-\begin{card}{CSMA}
+\begin{card}[Carrier Sense Multiple Access]{CSMA}
 \item Like ALOHA, but listens before sending.
 \item This is easy when wired, not so much wireless.
 \item Still possible to have collisions because of delay.
@@ -99,8 +89,7 @@
 \item Highly inefficient under high load.
 \end{card}
 
-\full{Carrier Sense Multiple Access with Collision Detection}
-\begin{card}{CSMA/CD}
+\begin{card}[Carrier Sense Multiple Access with Collision Detection]{CSMA/CD}
 \item Reduces the cost of collisions by detecting them and aborting (jam) rest of frame time.
 \item Time window for node to hear of collision is $2\times delay$
 \item Impose a minimum frame size that takes at least $2\times delay$ seconds to send so a node can't finish before a collision if one is going to happen.
@@ -113,26 +102,22 @@
 \item IEEE 802.3
 \end{card}
 
-\full{Binary Exponential Backoff}
-\begin{card}{BEB}
+\begin{card}[Binary Exponential Backoff]{BEB}
 \item Heuristic for estimating how long to wait after a frame collision by estimating the amount of nodes on a link.
 \item BEB doubles the waiting interval for each successive collision.
 \item Very efficient in practice because the wait time quickly gets large enough to work.
 \end{card}
 
-\full{}
 \begin{card}{Modern ethernet}
 \item Based on switches
 \item Also called switched ethernet.
 \end{card}
 
-\full{Wireless Multiple Access Control}
-\begin{card}{WMAC}
+\begin{card}[Wireless Multiple Access Control]{WMAC}
 \item Nodes can't hear when sending, can't detect collisions: No CSMD/CD!
 \end{card}
 
-\full{Multiple Access Control with Collision Avoidance}
-\begin{card}{MACA}
+\begin{card}[Multiple Access Control with Collision Avoidance]{MACA}
 \item Short handshake:
     \begin{enumerate}
         \item Sender: Request to send? (RTS) (with frame length)
@@ -142,12 +127,10 @@
 \item Solves both exposed terminals and hidden terminals.
 \end{card}
 
-\full{Access Point}
-\begin{card}{AP}
+\begin{card}[Access Point]{AP}
 \item Access point for connectivity with rest of internet in a WiFi schema.
 \end{card}
 
-\full{}
 \begin{card}{WiFi}
 \item Has a MAC problem for access to access point
 \item CSMA/CA, RTS/CTS optional.
@@ -156,20 +139,17 @@
 \item IEEE 802.11
 \end{card}
 
-\full{Carrier Sense Multiple Access Controll with Collision Avoidance}
-\begin{card}{CSMA/CA}
+\begin{card}[Carrier Sense Multiple Access Controll with Collision Avoidance]{CSMA/CA}
 \item Like MACA, but avoids collisions by inserting small random gaps instead of RTS/CTS.
 \end{card}
 
-\full{Contention-Free Multiple Access}
-\begin{card}{CFMA}
+\begin{card}[Contention-Free Multiple Access]{CFMA}
 \item Based on 'turn taking': Token is passed around.
 \item Fixed (higher) overhead with no collisions: predictable service.
 \item Better than CSMA under high load.
 \item More complex than CSMA, more things can go wrong.
 \end{card}
 
-\full{}
 \begin{card}{Switch}
 \item Basis of modern (switched) ethernet.
 \item Uses frame addresses to connect input to output ports.
@@ -179,7 +159,6 @@
 \item Offers scalable performance.
 \end{card}
 
-\full{}
 \begin{card}{Backward learning}
 \item The way that switches find out where to send frames.
 \item To fill the table: look at source adresses on input frames.
@@ -187,16 +166,20 @@
 \item Works with any number of switches and hubs if there are no loops in the topology (or it uses a switch spanning tree).
 \end{card}
 
-\full{}
 \begin{card}{Switch Spanning Tree}
 \item Switches collectively agree on spanning tree.
 \item Allows for loops in topology.
 \end{card}
 
-\full{Network Allocation Vector}
-\begin{card}{NAV}
+\begin{card}[Network Allocation Vector]{NAV}
 \item Used in WiFi 802.11
 \item Each frame carries a NAV field field that says how long the transmission sequence will take. (Frame + Ack)
+\end{card}
+
+\begin{card}[Address Resolution Protocol]{ARP}
+\item Used to map link layer (MAC) addresses to local IP adresses.
+\item Right on top of Ethernet.
+\item Request: Who has IP X.X.X.X? - Reply: I do, at X.X.X.X.X.X.
 \end{card}
 
 \end{document}
