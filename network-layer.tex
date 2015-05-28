@@ -1,0 +1,58 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\small
+
+\layer{Network}
+
+\full{}
+\begin{card}{Packet}
+\item The unit of data in a network layer.
+\end{card}
+
+\full{}
+\begin{card}{Routing}
+\item The process of deciding in which direction to send traffic.
+\item Network wide
+\end{card}
+
+\full{}
+\begin{card}{Forwarding}
+\item The process of sending a packet on its way.
+\end{card}
+
+\full{Internet Protocol}
+\begin{card}{IP}
+\item 
+\end{card}
+
+\full{}
+\begin{card}{Datagram Model}
+\item Each datagram contains a destination address.
+\item No setup needed.
+\item Router state: per destination
+\item Routing: per packet
+\item Failures are easy to mask
+\item Hard to add quality of service
+\end{card}
+
+\full{}
+\begin{card}{Virtual Circuit Model}
+\item Don't contain destination address, just labels.
+\item Setup needed
+\item Router state: per connection
+\item Routing: per circuit
+\item Failures are not easy to mask
+\item Easy to add quality of service
+\end{card}
+
+\full{Multiple Protocol Label Switching}
+\begin{card}{MPLS}
+\item
+\end{card}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
