@@ -44,7 +44,8 @@
 \end{card}
 
 \begin{card}[Time To Live]{TTL}
-\TODO
+\item Decremented with every router hop.
+\item Throws ICMP error if ever hits zero.
 \end{card}
 
 \begin{card}{Longest matching prefix}
@@ -53,6 +54,44 @@
 
 \begin{card}[Maximum Transmission Unit]{MTU}
 \item The largest packet which will fit through this network.
+\end{card}
+
+\begin{card}{IP packet fragmentation}
+\item Necessary because the entire packet might not fit into a frame.
+\item Drawbacks:
+    \begin{itemize}
+        \item Increases the processing load on routers that have to fragment a packet.
+        \item Decreases the probability of an entire packet being received.
+    \end{itemize}
+\item Alternatives: MTU discovery
+\end{card}
+
+\begin{card}[Internet Control Message Protocol]{ICMP}
+\item Reports packet forwarding errors to sender.
+\item On top of IP
+\item Used in MTU discovery (destination unreachable due to fragmentation)
+\end{card}
+
+\begin{card}{IPV4}
+\item 32 bit addresses
+\end{card}
+
+\begin{card}{IPV6}
+\item 128 bit addresses
+\end{card}
+
+\begin{card}{Middlebox}
+\item Advantages: Control over many hosts and possible rapid deployment.
+\item Disadvantages: breaking layering interferes with connectivity and poor vantage point for tasks.
+\end{card}
+
+\begin{card}[Network Address Translation]{NAT}
+\item Is a middlebox.
+\item Connects an internal network to an external network.
+\item Motivated by ipv4 address scarcity.
+\item Makes ISP think that hosts are just different (TCP) ports on one IP address by rewriting IP headers.
+\item Advantages: partially solves the IP address scarcity problem
+\item Disadvantages: doesn't work on connectionless protocols (UDP), breaks apps that expose IP adresses (FTP)
 \end{card}
 
 \end{document}
