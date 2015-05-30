@@ -44,12 +44,129 @@
 \end{card}
 
 \begin{card}[Time To Live]{TTL}
-\TODO
+\item Decremented with every router hop.
+\item Throws ICMP error if ever hits zero.
 \end{card}
 
 \begin{card}{Longest matching prefix}
 \TODO
 \end{card}
+
+\begin{card}[Maximum Transmission Unit]{MTU}
+\item The largest packet which will fit through this network.
+\end{card}
+
+\begin{card}{IP packet fragmentation}
+\item Necessary because the entire packet might not fit into a frame.
+\item Drawbacks:
+    \begin{itemize}
+        \item Increases the processing load on routers that have to fragment a packet.
+        \item Decreases the probability of an entire packet being received.
+    \end{itemize}
+\item Alternatives: MTU discovery
+\end{card}
+
+\begin{card}[Internet Control Message Protocol]{ICMP}
+\item Reports packet forwarding errors to sender.
+\item On top of IP
+\item Used in MTU discovery (destination unreachable due to fragmentation)
+\end{card}
+
+\begin{card}{IPV4}
+\item 32 bit addresses
+\end{card}
+
+\begin{card}{IPV6}
+\item 128 bit addresses
+\end{card}
+
+\begin{card}{Middlebox}
+\item Advantages: Control over many hosts and possible rapid deployment.
+\item Disadvantages: breaking layering interferes with connectivity and poor vantage point for tasks.
+\end{card}
+
+\begin{card}[Network Address Translation]{NAT}
+\item Is a middlebox.
+\item Connects an internal network to an external network.
+\item Motivated by ipv4 address scarcity.
+\item Makes ISP think that hosts are just different (TCP) ports on one IP address by rewriting IP headers.
+\item Advantages: partially solves the IP address scarcity problem
+\item Disadvantages: doesn't work on connectionless protocols (UDP), breaks apps that expose IP adresses (FTP)
+\end{card}
+
+\begin{card}{Routing}
+\item Good routing is comes down to finding a good bandwith allocation.
+\item A \textbf{distributed} and \textbf{decentralized} way of `finding the right path to take' for packets.
+\item Goals:
+    \begin{itemize}
+        \item Correctness
+        \item Efficiency
+        \item Fairness
+        \item Fast convergence
+        \item Scalability
+    \end{itemize}
+\end{card}
+
+\begin{card}{Unicast}
+\item A delivery model
+\item Deliver traffic to one target.
+\end{card}
+
+\begin{card}{Broadcast}
+\item A delivery model
+\item Deliver traffic to all targets
+\end{card}
+
+\begin{card}{Multicast}
+\item A delivery model
+\item Deliver traffic to a group of targets
+\end{card}
+
+\begin{card}{Anycast}
+\item A delivery model
+\item Deliver traffic to one target, from the best source.
+\end{card}
+
+
+\begin{card}{Shortest path routing}
+\item Route packets according to shortest path
+\item Assign every link a cost (should represent ...)
+\item Has the optimality property.
+\end{card}
+
+\begin{card}{Optimality property}
+\item If a path is optimal, then its subpaths are optimal as well.
+\item Shortest paths have this property.
+\end{card}
+
+\begin{card}{Distance Vector Routing}
+\item Distributed shortest paths
+\item Each node maintains a vector of distances and sends it to neighbors to update.
+\item Disadvantage: slow convergence
+\end{card}
+
+\begin{card}{Count to infinity scenario}
+\item In distance vector routing
+\item Happens when node disappears
+\end{card}
+
+\begin{card}[Routing Information Protocol]{RIP}
+\item Uses distance vector routing
+\item Includes split horizon, poison reverse heuristic
+\item Infinity is 16 hops $\Rightarrow$ no `count to infinity' scenarios
+\end{card}
+
+\begin{card}{Flooding}
+\item Broadcast a message through an entire network
+\item Every node: send the incoming message to all other neighbors. + remember the message
+\item Disadvantage: Inefficient because one node can receive message several times.
+\end{card}
+
+
+
+
+
+
 
 
 \end{document}
