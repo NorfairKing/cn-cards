@@ -2,46 +2,72 @@
 \begin{document}
 \small
 
-\layer{Physical}
+\layer{Transport}
 
-\begin{card}{Rate}
-\item A measure of the speed by which bits are transferred across a channel
-\item Measured in $bps$
+\begin{card}[Transport Control Protocol]{TCP}
+\item Features
+    \begin{itemize}
+        \item Streams
+        \item Connections
+        \item Arbitrary length data
+        \item Flow control and Congestion control
+    \end{itemize}
+\item Three-way handshake: $Syn(x)$, $Syn(y)Ack(x+1)$, $Ack(y+1$
+\item Symmetric connection release
 \end{card}
 
-\begin{card}{Latency}
-\item Latency is the combination of transmission delay and propagation delay.
-\item transmission delay = time to put an $n$ bit message on the channel: $n/rate$
-\item propagation delay = time for signal to propagate across the channel: $n/speed$
-\item Measured in seconds
+\begin{card}[User Datagram Protocol]{UDP}
+\item Features
+    \begin{itemize}
+        \item Messages
+        \item Connectionless
+        \item Stateless
+    \end{itemize}
 \end{card}
 
-\begin{card}{Bandwidth-Delay}
-\item A measure for the amount of data in flight.
-\item Calculated as $rate \times delay$.
-\item Measured in bits
+\begin{card}{Socket}
+\item Full name: Berkley Sockets
+\item Abstraction of transport layer API
+\item Sockets let apps attach to a port
 \end{card}
 
-\begin{card}{Bandwidth}
-\item Electrical engineering definition: width of frequency band
-\item Computer science definition: information carrying capacity: $bits/sec$
+\begin{card}{Port}
+\item The end-point for transport layer traffic: TSAP
 \end{card}
 
-\begin{card}[Round Trip Time]{RTT}
-\item The time it takes for a response to arrive.
-\item Computed as $2\times delay$.
+\begin{card}{Segment}
+\item The unit of data in the transport layer
 \end{card}
 
-\begin{card}[Signal to Noise Ratio]{SNR}
-\item A measure for how efficient a signal is at carrying information.
-\item Computed as $(signal + noise)/signal$
+\begin{card}[Maximum Segment Size]{MSS}
+\item The largest valid size for a TCP segment.
 \end{card}
 
-\begin{card}{Hub}
-\item Also called a repeater.
-\item Forwards any incoming signal to all the other ports.
-\item Equivalent to linking up all the nodes on one line.
+\begin{card}[ISN]{Initial Sequence Number}
+\item First valid sequence number to use in TCP
+\item Agreed on (by both sides) in three way handshake.
 \end{card}
+
+\begin{card}[Transport Service Access Point]{TSAP}
+\item Defines an end-point for transport layer traffic
+\item Example: Ports
+\end{card}
+
+\begin{card}{Stop-and-Wait}
+\item Send one segment and wait for response, then repeat
+\item Disadvantage: very inefficient when bandwith-delay is much larger than one packet.
+\end{card}
+
+\begin{card}{Sliding Window}
+\item Send $2\times bandwith \times delay$ packets and wait for responses, then repeat.
+\item Advantage: uses network optimally.
+\item Variations
+    \begin{itemize}
+        \item Go back $N$: Receiver only acks last valid packet and discard rest.
+        \item Selective repeat: Receiver buffers out-of-order packets and acks all that fit in buffer.
+    \end{itemize}
+\end{card}
+
 
 \end{document}
 
