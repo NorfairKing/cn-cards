@@ -7,7 +7,7 @@
 \begin{card}[Transport Control Protocol]{TCP}
 \item Features
     \begin{itemize}
-        \item Streams
+        \item Reliable bidirectional bytestream
         \item Connections
         \item Arbitrary length data
         \item Flow control and Congestion control
@@ -66,6 +66,15 @@
         \item Go back $N$: Receiver only acks last valid packet and discard rest.
         \item Selective repeat: Receiver buffers out-of-order packets and acks all that fit in buffer.
     \end{itemize}
+\end{card}
+
+\begin{card}{Adaptive Timeout}
+\item Makes sure that most of the packets' acks arrive within timeout.
+\item Keep smoothed estimates of RTT and variance in RTT.
+\item Set new timeout to $estimate + 4\times Variance$
+\end{card}
+
+\begin{card}{}
 \end{card}
 
 
