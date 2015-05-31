@@ -14,6 +14,7 @@
     \end{itemize}
 \item Three-way handshake: $Syn(x)$, $Syn(y)Ack(x+1)$, $Ack(y+1$
 \item Symmetric connection release
+\item Only unicast
 \end{card}
 
 \begin{card}[User Datagram Protocol]{UDP}
@@ -23,6 +24,7 @@
         \item Connectionless
         \item Stateless
     \end{itemize}
+\item Advantages: relatively low overhead
 \end{card}
 
 \begin{card}{Socket}
@@ -74,9 +76,19 @@
 \item Set new timeout to $estimate + 4\times Variance$
 \end{card}
 
-\begin{card}{}
+\begin{card}{Min-Max Fairness}
+\item Definition: an allocation of bandwidth is min-fair if the bandwidth given to one flow cannot be increased without decreasing bandwidth for a smaller flow.
 \end{card}
 
+\begin{card}[Additive Increase, Multiplicative Decrease]{AIMD}
+\item Increase flow additively while network is not congested, decrease multiplicatively when congestion occurs.
+\item Ensures quickest convergence to optimal flow.
+\item Used in TCP
+\end{card}
+
+\begin{card}[Real-Time Protocol]{RTP}
+\TODO
+\end{card}
 
 \end{document}
 
