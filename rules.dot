@@ -1,0 +1,40 @@
+digraph rules {
+    start[label="A's turn"];
+    {rank=same start};
+    pb[label="",shape="point",style="invis"];
+    start -> pb [label="B pick card",arrowhead="none"];
+
+    abbq [label="Abbreviation or Layer"];
+    bulletq [label="Bullet Point"];
+    int [label="",shape="point", style="invis"];
+
+    {rank=same abbq bulletq};
+    
+    pb -> int[label="B picks question",arrowhead="none"];
+    int -> abbq;
+    int -> bulletq;
+
+    abbq -> agetss [label="correct"];
+    abbq -> bgets [label="incorrect"];
+    bulletq -> agets [label="correct"];
+    bulletq -> ngets [label="incorrect"];
+
+    bgets[label="B gets the card"];
+    agets[label="A gets the card"];
+    agetss[label="A gets the card"];
+    ngets[label="The card is put back"];
+
+    {rank=same agets agetss bgets ngets};
+    
+
+    turnb[label="B's turn"];
+    turna[label="",shape="point",style="invis"]
+    ngets -> turnb;
+    bgets -> turna[arrowhead="none"];
+    agetss -> turna[arrowhead="none"];
+    agets -> turnb;
+
+    {rank=same turna turnb};
+    turna -> start;
+    
+}

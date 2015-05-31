@@ -52,6 +52,11 @@
 \TODO
 \end{card}
 
+\begin{card}{Hierarchical Routing}
+\item For routing efficiency: reduced routing table size
+\item Disadvantage: Sometimes packets take longer paths.
+\end{card}
+
 \begin{card}[Maximum Transmission Unit]{MTU}
 \item The largest packet which will fit through this network.
 \end{card}
@@ -162,12 +167,53 @@
 \item Disadvantage: Inefficient because one node can receive message several times.
 \end{card}
 
+\begin{card}[Link State Packet]{LSP}
+\item Contains information on a network topology.
+\end{card}
 
+\begin{card}{Link State Routing}
+\item Trades more computation for better dynamics.
+\item 2 phases:
+    \begin{enumerate}
+        \item Nodes flood local topology in link state packets (LSP) so that each node learns the full topology.
+        \item Each node computes its own forwarding table with a shortest path algorithm. (Dijkstra)
+    \end{enumerate}
+\item Notes next to failed node/link will flood updated LSPs.
+\end{card}
 
+\begin{card}[Open Shortest Path First]{OSPR}
+\item Modern link state protocol.
+\end{card}
 
+\begin{card}[Intermediate System to Intermediate System]{IS-IS}
+\item Modern link state protocol.
+\end{card}
 
+\begin{card}[Multi Path Routing]{MPR}
+\item Just to increase performance by using multiple paths
+\end{card}
 
+\begin{card}[Equal Cost Multi Path routing]{ECMP}
+\item MPR but only use paths with equal cost.
+\item Uses source DAG instead of source tree.
+\item Advantage: easier to balance load.
+\item Disadvantage: introduces ordering issues.
+\end{card}
 
+\begin{card}[Border Gateway Protocol]{BGP}
+\item Computes interdomain routes
+\item Path vector protocol
+\item Border routers announce routes to eachother
+\end{card}
+
+\begin{card}[Autonomous System]{AS}
+\item Party in the BGP setting (example: ISP)
+\end{card}
+
+\begin{card}[Network Service Access Point]{NSAP}
+\item Defines an end point for network layer traffic
+\item Example: IP Addresses
+\end{card}
 
 \end{document}
 

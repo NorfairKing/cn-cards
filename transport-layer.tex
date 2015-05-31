@@ -1,0 +1,86 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\small
+
+\layer{Transport}
+
+\begin{card}[Transport Control Protocol]{TCP}
+\item Features
+    \begin{itemize}
+        \item Reliable bidirectional bytestream
+        \item Connections
+        \item Arbitrary length data
+        \item Flow control and Congestion control
+    \end{itemize}
+\item Three-way handshake: $Syn(x)$, $Syn(y)Ack(x+1)$, $Ack(y+1$
+\item Symmetric connection release
+\end{card}
+
+\begin{card}[User Datagram Protocol]{UDP}
+\item Features
+    \begin{itemize}
+        \item Messages
+        \item Connectionless
+        \item Stateless
+    \end{itemize}
+\end{card}
+
+\begin{card}{Socket}
+\item Full name: Berkley Sockets
+\item Abstraction of transport layer API
+\item Sockets let apps attach to a port
+\end{card}
+
+\begin{card}{Port}
+\item The end-point for transport layer traffic: TSAP
+\end{card}
+
+\begin{card}{Segment}
+\item The unit of data in the transport layer
+\end{card}
+
+\begin{card}[Maximum Segment Size]{MSS}
+\item The largest valid size for a TCP segment.
+\end{card}
+
+\begin{card}[ISN]{Initial Sequence Number}
+\item First valid sequence number to use in TCP
+\item Agreed on (by both sides) in three way handshake.
+\end{card}
+
+\begin{card}[Transport Service Access Point]{TSAP}
+\item Defines an end-point for transport layer traffic
+\item Example: Ports
+\end{card}
+
+\begin{card}{Stop-and-Wait}
+\item Send one segment and wait for response, then repeat
+\item Disadvantage: very inefficient when bandwith-delay is much larger than one packet.
+\end{card}
+
+\begin{card}{Sliding Window}
+\item Send $2\times bandwith \times delay$ packets and wait for responses, then repeat.
+\item Advantage: uses network optimally.
+\item Variations
+    \begin{itemize}
+        \item Go back $N$: Receiver only acks last valid packet and discard rest.
+        \item Selective repeat: Receiver buffers out-of-order packets and acks all that fit in buffer.
+    \end{itemize}
+\end{card}
+
+\begin{card}{Adaptive Timeout}
+\item Makes sure that most of the packets' acks arrive within timeout.
+\item Keep smoothed estimates of RTT and variance in RTT.
+\item Set new timeout to $estimate + 4\times Variance$
+\end{card}
+
+\begin{card}{}
+\end{card}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
