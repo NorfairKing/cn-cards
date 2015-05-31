@@ -90,6 +90,36 @@
 \TODO
 \end{card}
 
+\begin{card}{Sliding Window Ack Clocking}
+\item A part of a sliding window
+\item Automatically spread packets according to the speed of the bottleneck link.
+\item Helps network run with low levels of loss and delay.
+\end{card}
+
+\begin{card}{TCP Slow Start}
+\item Before AIMD
+\item Double the congestion window after every round-trip time untill congestion occurs (notice via ack timeout).
+\item Concretely: Increase congestion window by one packet for every ack received.
+\item We want to get the congestion window near to the right rate quickly, but additive increase is too slow and a fixed congestion window is too arbitrary.
+\item Slow start is only slow when compared to the conversion of a fixed congestion window. It's really very fast (exponential).
+\end{card}
+
+\begin{card}{Fast retransmit and Fast recover}
+\item The MD part of AIMD in TCP
+\item Fast retransmit: Treat three duplicate acks as a loss
+\item Fast recover: After fast retransmit, start MD
+\end{card}
+
+\begin{card}[Selective Acknowledgement]{SACK}
+\TODO
+\end{card}
+
+\begin{card}[Explicit Congestion Notification]{ECN}
+\TODO
+\end{card}
+
+
+
 \end{document}
 
 %%% Local Variables:
