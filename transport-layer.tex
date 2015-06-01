@@ -14,6 +14,7 @@
     \end{itemize}
 \item Three-way handshake: $Syn(x)$, $Syn(y)Ack(x+1)$, $Ack(y+1$
 \item Symmetric connection release
+\item Only unicast
 \end{card}
 
 \begin{card}[User Datagram Protocol]{UDP}
@@ -23,6 +24,7 @@
         \item Connectionless
         \item Stateless
     \end{itemize}
+\item Advantages: relatively low overhead
 \end{card}
 
 \begin{card}{Socket}
@@ -74,8 +76,53 @@
 \item Set new timeout to $estimate + 4\times Variance$
 \end{card}
 
-\begin{card}{}
+\begin{card}{Min-Max Fairness}
+\item Definition: an allocation of bandwidth is min-fair if the bandwidth given to one flow cannot be increased without decreasing bandwidth for a smaller flow.
 \end{card}
+
+\begin{card}[Additive Increase, Multiplicative Decrease]{AIMD}
+\item Increase flow additively while network is not congested, decrease multiplicatively when congestion occurs.
+\item Ensures quickest convergence to optimal flow.
+\item Used in TCP
+\end{card}
+
+\begin{card}[Real-Time Protocol]{RTP}
+\item designed for end-to-end, real-time, transfer of streaming media
+\end{card}
+
+\begin{card}[Real-Time Control Protocol]{RTCP}
+\item Used to provide QoS feedback to RTP
+\end{card}
+
+\begin{card}{Sliding Window Ack Clocking}
+\item A part of a sliding window
+\item Automatically spread packets according to the speed of the bottleneck link.
+\item Helps network run with low levels of loss and delay.
+\end{card}
+
+\begin{card}{TCP Slow Start}
+\item Before AIMD
+\item Double the congestion window after every round-trip time untill congestion occurs (notice via ack timeout).
+\item Concretely: Increase congestion window by one packet for every ack received.
+\item We want to get the congestion window near to the right rate quickly, but additive increase is too slow and a fixed congestion window is too arbitrary.
+\item Slow start is only slow when compared to the conversion of a fixed congestion window. It's really very fast (exponential).
+\end{card}
+
+\begin{card}{Fast retransmit and Fast recover}
+\item The MD part of AIMD in TCP
+\item Fast retransmit: Treat three duplicate acks as a loss
+\item Fast recover: After fast retransmit, start MD
+\end{card}
+
+\begin{card}[Selective Acknowledgement]{SACK}
+\item Includes, not only the cumulative acknowledgement of segments up until a certain point, but a notice of which segments have been received.
+\end{card}
+
+\begin{card}[Explicit Congestion Notification]{ECN}
+\item An extension of TCP/IP to allow for notification of network congestion
+\item Allows for communication without dropping packets
+\end{card}
+
 
 
 \end{document}

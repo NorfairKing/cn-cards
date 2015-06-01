@@ -4,6 +4,9 @@
 
 \layer{Application}
 
+\begin{card}[Top Level Domain]{TLD}
+\item Domain at the top level of the domain name system
+\end{card}
 
 \begin{card}{Telnet}
 \item Oldest internet application: 1983
@@ -13,40 +16,26 @@
 \item On top of TCP, port 25
 \end{card}
 
-
 \begin{card}[Hyper Text Transfer Protocol]{HTTP}
 \item On top of TCP, port 80
-%Headers?
-%Commands?
-% \item GET - retrieve document specified by URL
-% \item PUT - store specified document under given URL
-% \item HEAD - retrieve header from doc. specified by URL
-% \item OPTIONS - retrieve information about available options
-% \item POST - give information to the server
-% \item DELETE - remove document specified by URL
-% \item Difference between 1.0 and 1.1
 \end{card}
-
  
 \begin{card}[Hyper Text Markup Language]{HTML}
-\TODO
+\item A language to specify the form of a webpage.
 \end{card}
 
-
 \begin{card}[Cascading Style Sheets]{CSS}
-\TODO
+\item A language to specify how a HTML page should look.
 \end{card}
 
 %CGI - Common gateway interface
 %PHP - Hypertext Preprocessor
 %AJAX - Asynchronous JavaScrip and XML
 
-
 \begin{card}[File Transfer Protocol]{FTP}
 \item On top of TCP, port 21 for control, 22 for data
 \item Control port uses telnet to negotiate session
 \end{card}
-% All Commands?
 
 \begin{card}[Domain Name System]{DNS}
 \item Hierarchical, domain-based naming scheme.
@@ -58,33 +47,27 @@
 \item On top of UDP
 \end{card}
 
-
 \begin{card}[Electronic Mail]{EMail}
 \item Message = Enveloppe + Header + Body
 \item Adress = user@dns-address
 \end{card}
 
-
 \begin{card}[Universal Resource Identifier]{URI}
-\TODO
+\item A string of characters used to identify a resource
 \end{card}
-
 
 \begin{card}[Uniform Resource Locator]{URL}
 \item Information on how to locate a resource
 \item Sturcture: protorol://server/resource
 \end{card}
 
-
 \begin{card}[Uniforum Recource Name]{URN}
 \item Information on the name of a resource
 \end{card}
 
-
 \begin{card}[Standardized General Markup Language]{SGML}
-\TODO
+\item Used to define markup languages
 \end{card}
-
 
 \begin{card}[Simple Mail Transfer Protocol]{SMTP}
 \item Phases: Handshaking, Transfer  of  messages, Closure
@@ -94,28 +77,24 @@
 \item Mailboxes
 \item On top of TCP, port 25
 \end{card}
-% All Commands?
 
-% MIME
-
+\begin{card}[Multi-Purpose Internet Mail Extensions]{MIME}
+\item Extensions for email to allow for different kinds of data files.
+\end{card}
 
 \begin{card}[World Wide Web]{WWW}
 \item Abstract collection of information in hypertext, connected through hyperlinks
 \end{card}
-
 
 \begin{card}[Post Office Protocol]{POP}
 \item Final delivery of mail
 \item unsynchronized
 \end{card}
 
-
 \begin{card}[Internet Message Access Protocol]{IMAP}
 \item Final delivery of mail
 \item synchronzed
 \end{card}
-% All Commands?
-
 
 \begin{card}[Dynamic Host Configuration Protocol]{DHCP}
 \item Address leases
@@ -123,7 +102,6 @@
 \item Client has no IP yet: broadcast.
 \item On top of UPD
 \end{card}
-
 
 \begin{card}[Wake on LAN]{WoL}
 \item Wake up a computer from standby via network
@@ -142,7 +120,6 @@
 %GIMPS
 %BOINC
 
-
 \begin{card}{Gnutella}
 \item Phases: Connection, Search, File transfer
 \item unstructured, decentralised, overlay network
@@ -151,9 +128,7 @@
 \item Difference between 0.4 and 0.6: super-nodes
 \item On top of TCP
 \item Designed for resource discovery
-%Messages?
 \end{card}
-
 
 \begin{card}{Chord}
 \item Fully decentralized P2P network
@@ -162,7 +137,6 @@
 \item $\log(N)$ entries in each routing table
 \item Designed for efficient object routing
 \end{card}
-
 
 \begin{card}{Bittorrent}
 \item Uses web infrastructure
@@ -173,7 +147,6 @@
 \item Designed for efficient content distribution
 \end{card}
 
-
 \begin{card}[The Onion Router]{TOR}
 \item Messages are encrypted as they travel along onion routers
 \item Each router removes a layer of encryption to reveal next hop
@@ -182,7 +155,21 @@
 \item Traffic encapsulatedin cells
 \end{card}
 
+\begin{card}[Content Delivery Network]{CDN}
+\item A system of distributed servers that deliver content as fast as possible based on geographical location.
+\end{card}
 
+% \begin{card}[Distributed Hash Table]{DHT}
+% \TODO
+% \end{card}
+
+% \begin{card}[Session Initiation Protocol]{SIP}
+% \TODO
+% \end{card}
+
+% \begin{card}[Real-Time Streaming Protocol]{RTSP}
+% \TODO
+% \end{card}
 
 \end{document}
 
