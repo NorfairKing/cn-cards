@@ -77,7 +77,8 @@
 \item Send when you have traffic, resend randomly later if collision.
 \item Very simple, works well under low load.
 \item Highly inefficient under high load.
-\item Slotted version increases maximum efficiency from 18\% to 36\%
+\item Slotted version doubles maximum efficiency
+\item Doesn't listen before sending: No carrier sense
 \end{card}
 
 \begin{card}[Carrier Sense Multiple Access]{CSMA}
@@ -127,6 +128,16 @@
 \item Solves both exposed terminals and hidden terminals.
 \end{card}
 
+\begin{card}{Hidden Terminals}
+\item Problem in MAC: ABC topology, if A and C both want to send, A can't see that C is sending.
+\item Can be solved with MACA
+\end{card}
+
+\begin{card}{Exposed Terminals}
+\item Probel in MAC: ABC topology, if B wants to send while C is sending somewhere, B will think that he can't send.
+\item Can be solved with MACA
+\end{card}
+
 \begin{card}[Access Point]{AP}
 \item Access point for connectivity with rest of internet in a WiFi schema.
 \end{card}
@@ -139,7 +150,7 @@
 \item IEEE 802.11
 \end{card}
 
-\begin{card}[Carrier Sense Multiple Access Controll with Collision Avoidance]{CSMA/CA}
+\begin{card}[Carrier Sense Multiple Access Control with Collision Avoidance]{CSMA/CA}
 \item Like MACA, but avoids collisions by inserting small random gaps instead of RTS/CTS.
 \end{card}
 
@@ -157,6 +168,7 @@
 \item Need buffers so loss is possible.
 \item More reliable than classic ethernet.
 \item Offers scalable performance.
+\item Also called MAC bridge, switching hub or bridging hub
 \end{card}
 
 \begin{card}{Backward learning}
@@ -187,7 +199,7 @@
 \item Master node provides synchronisation for TDMA.
 \item Provides integrity of messages.
 \item Not scalable: maximum 256 nodes.
-\item Not configurably, just works.
+\item Not configurable, just works.
 \end{card}
 
 \begin{card}[Time Division Medium Access]{TDMA}
@@ -200,6 +212,18 @@
 \item Network of wireless sensors
 \item Multi hop routing
 \item Central gateway node(s)
+\end{card}
+
+\begin{card}{MAC address}
+\item Address of network card in link layer.
+\item Used by switches
+\end{card}
+
+\begin{card}[Berkley Medium Access Control]{BMAC}
+\item Very low powered, scalable, decentralized.
+\item Very configurable.
+\item Passive listening.
+\item Long preamble to make sure that the receiver is listening.
 \end{card}
 
 \end{document}
