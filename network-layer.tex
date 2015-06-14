@@ -75,12 +75,16 @@
 \item Used in MTU discovery (destination unreachable due to fragmentation)
 \end{card}
 
-\begin{card}{IPV4}
+\begin{card}{IPv4}
 \item 32 bit addresses
+\item Used to uniquely name network interface at network layer level.
 \end{card}
 
-\begin{card}{IPV6}
+\begin{card}{IPv6}
 \item 128 bit addresses
+\item Used to uniquely name network interface at network layer level.
+\item first 48: network, 16 for subnet, 64 for host
+\item No more checksums: happens in transport layer and faster this way.
 \end{card}
 
 \begin{card}{Middlebox}
@@ -145,6 +149,8 @@
 \item Distributed shortest paths
 \item Each node maintains a vector of distances and sends it to neighbors to update.
 \item Disadvantage: slow convergence
+\item Count to infinity problem
+\item Used in original ARPANET and RIP
 \end{card}
 
 \begin{card}{Count to infinity scenario}
@@ -211,6 +217,38 @@
 \item Defines an end point for network layer traffic
 \item Example: IP Addresses
 \end{card}
+
+\begin{card}{Congestion notifications}
+\item Three options
+    \begin{enumerate}
+        \item Choke packets
+        \item Random Early Detection (RED)
+        \item Explicit Congestion Notification (ECN)
+    \end{enumerate}
+\item Let transport know that network is congested.
+\end{card}
+
+\begin{card}[Explicit Congestion Notification]{ECN}
+\item A type of congestion notification.
+\item Set a flag on packets when network is congested. Reciever sets same flag.
+\item Advantage: No extra packets, no extra loss
+\item Disadvantage: Takes at least 2 RTT.
+\end{card}
+
+\begin{card}[Random Early Detection]{RED}
+\item A type of congestion notification.
+\item Drop \textbf{random} packets just before network is going to be congested.
+\item Advantage: Very fair, no extra packets
+\item Disadvantage: Not as fast a notification as choke packets and dropped packets have to be resent
+\end{card}
+
+\begin{card}{Choke packets}
+\item A type of congestion notification.
+\item When network is congested, send choke packet directly to source.
+\item Advantage: Very fast notification
+\item Disadvantage: more packets on an already congested packet
+\end{card}
+
 
 \end{document}
 

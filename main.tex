@@ -6,6 +6,8 @@
 \input{header}
 \setlength\itemsep{1em}
 
+\immediate\write18{git rev-parse --short HEAD > commit.tex}
+
 \begin{document}
 \input{titlepage}
 

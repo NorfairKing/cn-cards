@@ -4,15 +4,13 @@ OUTPUT_NAME = cn-cards
 MAIN_NAME = main
 RULES_DFS = rules
 
-LATEX = ./makepdf.sh
-
-all: cards rules
+all: rules cards
 
 cards: $(RULES_DFS).eps $(OUTPUT_NAME).pdf
 rules: $(RULES_DFS).eps $(RULES_DFS).pdf
 
-$(OUTPUT_NAME).pdf:
-	$(LATEX) $(MAIN_NAME).tex
+$(OUTPUT_NAME).pdf: individuals main.tex
+	latexmk -pdf -pdflatex="pdflatex -shell-escape -halt-on-error -enable-pipes -enable-write18" -use-make $(MAIN_NAME).tex
 	cp $(MAIN_NAME).pdf $(OUTPUT_NAME).pdf
 
 $(RULES_DFS).eps: $(RULES_DFS).dot
@@ -26,3 +24,5 @@ love:
 
 clean:
 	rm -f *.pdf *.eps
+
+individuals: *.tex

@@ -17,6 +17,19 @@
 \item Only unicast
 \end{card}
 
+\begin{card}{Delayed Acknowledgements}
+\item Used in TCP
+\item Delay sending an acknowledgement to send a higher cumulative acknowledgement
+\item Interacts badly with Nagle's algorithm
+\item Works best on very reliable connection.
+\end{card}
+
+\begin{card}{Nagle's Algorithm}
+\item Send multiple very small messages at once.
+\item Buffer as long as last packet hasn't been acknowledged and packet is not full.
+\item Interacts badly with delayed Acknowledgements.
+\end{card}
+
 \begin{card}[User Datagram Protocol]{UDP}
 \item Features
     \begin{itemize}
@@ -35,6 +48,7 @@
 
 \begin{card}{Port}
 \item The end-point for transport layer traffic: TSAP
+\item Used to uniquely name a transport layer client.
 \end{card}
 
 \begin{card}{Segment}
@@ -65,8 +79,9 @@
 \item Advantage: uses network optimally.
 \item Variations
     \begin{itemize}
+        \item Stop and wait: one frame at a time.
         \item Go back $N$: Receiver only acks last valid packet and discard rest.
-        \item Selective repeat: Receiver buffers out-of-order packets and acks all that fit in buffer.
+        \item Selective repeat: Cumulatieve acks and nacks.
     \end{itemize}
 \end{card}
 

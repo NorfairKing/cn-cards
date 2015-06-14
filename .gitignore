@@ -1,5 +1,6 @@
 # Compiled pdfs
 *.pdf
+commit.tex
 
 # more files around latex and emacs
 _region_.tex
