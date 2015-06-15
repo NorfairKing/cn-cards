@@ -7,7 +7,7 @@
 \begin{card}[Transport Control Protocol]{TCP}
 \item Features
     \begin{itemize}
-        \item Reliable bidirectional bytestream
+        \item Reliable bidirectional byte-stream
         \item Connections
         \item Arbitrary length data
         \item Flow control and Congestion control
@@ -17,9 +17,9 @@
 \item Only unicast
 \end{card}
 
-\begin{card}{Delayed Acknowledgements}
+\begin{card}{Delayed Acknowledgments}
 \item Used in TCP
-\item Delay sending an acknowledgement to send a higher cumulative acknowledgement
+\item Delay sending an acknowledgment to send a higher cumulative acknowledgment
 \item Interacts badly with Nagle's algorithm
 \item Works best on very reliable connection.
 \end{card}
@@ -27,7 +27,7 @@
 \begin{card}{Nagle's Algorithm}
 \item Send multiple very small messages at once.
 \item Buffer as long as last packet hasn't been acknowledged and packet is not full.
-\item Interacts badly with delayed Acknowledgements.
+\item Interacts badly with delayed Acknowledgments.
 \end{card}
 
 \begin{card}[User Datagram Protocol]{UDP}
@@ -41,7 +41,7 @@
 \end{card}
 
 \begin{card}{Socket}
-\item Full name: Berkley Sockets
+\item Full name: Berkeley Sockets
 \item Abstraction of transport layer API
 \item Sockets let apps attach to a port
 \end{card}
@@ -71,7 +71,7 @@
 
 \begin{card}{Stop-and-Wait}
 \item Send one segment and wait for response, then repeat
-\item Disadvantage: very inefficient when bandwith-delay is much larger than one packet.
+\item Disadvantage: very inefficient when bandwidth-delay is much larger than one packet.
 \end{card}
 
 \begin{card}{Sliding Window}
@@ -80,19 +80,19 @@
 \item Variations
     \begin{itemize}
         \item Stop and wait: one frame at a time.
-        \item Go back $N$: Receiver only acks last valid packet and discard rest.
-        \item Selective repeat: Cumulatieve acks and nacks.
+        \item Go back $N$: Receiver only ACKs last valid packet and discard rest.
+        \item Selective repeat: Cumulative ACKs and nACKs.
     \end{itemize}
 \end{card}
 
 \begin{card}{Adaptive Timeout}
-\item Makes sure that most of the packets' acks arrive within timeout.
+\item Makes sure that most of the packets' ACKs arrive within timeout.
 \item Keep smoothed estimates of RTT and variance in RTT.
 \item Set new timeout to $estimate + 4\times Variance$
 \end{card}
 
 \begin{card}{Min-Max Fairness}
-\item Definition: an allocation of bandwidth is min-fair if the bandwidth given to one flow cannot be increased without decreasing bandwidth for a smaller flow.
+\item Definition: an allocation of bandwidth is min-max-fair if the bandwidth given to one flow cannot be increased without decreasing bandwidth for a smaller flow.
 \end{card}
 
 \begin{card}[Additive Increase, Multiplicative Decrease]{AIMD}
@@ -117,20 +117,20 @@
 
 \begin{card}{TCP Slow Start}
 \item Before AIMD
-\item Double the congestion window after every round-trip time untill congestion occurs (notice via ack timeout).
-\item Concretely: Increase congestion window by one packet for every ack received.
+\item Double the congestion window after every round-trip time until congestion occurs (notice via ACK timeout).
+\item Concretely: Increase congestion window by one packet for every ACK received.
 \item We want to get the congestion window near to the right rate quickly, but additive increase is too slow and a fixed congestion window is too arbitrary.
 \item Slow start is only slow when compared to the conversion of a fixed congestion window. It's really very fast (exponential).
 \end{card}
 
 \begin{card}{Fast retransmit and Fast recover}
 \item The MD part of AIMD in TCP
-\item Fast retransmit: Treat three duplicate acks as a loss
+\item Fast retransmit: Treat three duplicate ACKs as a loss
 \item Fast recover: After fast retransmit, start MD
 \end{card}
 
-\begin{card}[Selective Acknowledgement]{SACK}
-\item Includes, not only the cumulative acknowledgement of segments up until a certain point, but a notice of which segments have been received.
+\begin{card}[Selective Acknowledgment]{SACK}
+\item Includes, not only the cumulative acknowledgment of segments up until a certain point, but a notice of which segments have been received.
 \end{card}
 
 \begin{card}[Explicit Congestion Notification]{ECN}

@@ -19,12 +19,12 @@
 
 \begin{card}[Internet Protocol]{IP}
 \item Datagram network protocol
-\item Its routing enables internetworking and thus the internet.
+\item Its routing enables internetworking and thus the Internet.
 \end{card}
 
 \begin{card}[Multiple Protocol Label Switching]{MPLS}
 \item Virtual circuit network protocol
-\item Packet forwarding descisions are made solely on the contents of the label of the packet.
+\item Packet forwarding decisions are made solely on the contents of the label of the packet.
 \end{card}
 
 \begin{card}{Datagram Model}
@@ -95,14 +95,14 @@
 \begin{card}[Network Address Translation]{NAT}
 \item Is a middlebox.
 \item Connects an internal network to an external network.
-\item Motivated by ipv4 address scarcity.
+\item Motivated by IPv4 address scarcity.
 \item Makes ISP think that hosts are just different (TCP) ports on one IP address by rewriting IP headers.
 \item Advantages: partially solves the IP address scarcity problem
-\item Disadvantages: doesn't work on connectionless protocols (UDP), breaks apps that expose IP adresses (FTP)
+\item Disadvantages: doesn't work on connectionless protocols (UDP), breaks apps that expose IP addresses (FTP)
 \end{card}
 
 \begin{card}{Routing}
-\item Good routing is comes down to finding a good bandwith allocation.
+\item Good routing is comes down to finding a good bandwidth allocation.
 \item A \textbf{distributed} and \textbf{decentralized} way of `finding the right path to take' for packets.
 \item Goals:
     \begin{itemize}
@@ -141,7 +141,7 @@
 \end{card}
 
 \begin{card}{Optimality property}
-\item If a path is optimal, then its subpaths are optimal as well.
+\item If a path is optimal, then its sub-paths are optimal as well.
 \item Shortest paths have this property.
 \end{card}
 
@@ -204,9 +204,9 @@
 \end{card}
 
 \begin{card}[Border Gateway Protocol]{BGP}
-\item Computes interdomain routes
+\item Computes inter-domain routes
 \item Path vector protocol
-\item Border routers announce routes to eachother
+\item Border routers announce routes to each other
 \end{card}
 
 \begin{card}[Autonomous System]{AS}
@@ -230,7 +230,7 @@
 
 \begin{card}[Explicit Congestion Notification]{ECN}
 \item A type of congestion notification.
-\item Set a flag on packets when network is congested. Reciever sets same flag.
+\item Set a flag on packets when network is congested. Receiver sets same flag.
 \item Advantage: No extra packets, no extra loss
 \item Disadvantage: Takes at least 2 RTT.
 \end{card}

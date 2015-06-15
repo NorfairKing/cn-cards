@@ -13,7 +13,7 @@
 \begin{card}{Byte count framing}
 \item Method for framing
 \item Start the beginning of each frame with a length field.
-\item Problem: no way of resynchronising after an error.
+\item Problem: no way of re-synchronising after an error.
 \end{card}
 
 \begin{card}{Byte stuffing}
@@ -69,12 +69,12 @@
 
 \begin{card}[Randomized Multiple Access Control]{RMAC}
 \item A strategy for controlling which node gets to used a shared link.
-\item Basic idea: Send when you have traffic, resend randomly later if collision.
+\item Basic idea: Send when you have traffic, re-send randomly later if collision.
 \end{card}
 
 \begin{card}{ALOHA}
-\item Computer network for Hawaian islands.
-\item Send when you have traffic, resend randomly later if collision.
+\item Computer network for Hawaiian islands.
+\item Send when you have traffic, re-send randomly later if collision.
 \item Very simple, works well under low load.
 \item Highly inefficient under high load.
 \item Slotted version doubles maximum efficiency
@@ -96,22 +96,22 @@
 \item Impose a minimum frame size that takes at least $2\times delay$ seconds to send so a node can't finish before a collision if one is going to happen.
 \end{card}
 
-\begin{card}{Classic ethernet}
+\begin{card}{Classic Ethernet}
 \item All nodes share one coaxial cable.
 \item Uses 1-persistent CSMA/CD with BEB
 \item No Ack or retransmissions
 \item IEEE 802.3
 \end{card}
 
-\begin{card}[Binary Exponential Backoff]{BEB}
+\begin{card}[Binary Exponential Back-off]{BEB}
 \item Heuristic for estimating how long to wait after a frame collision by estimating the amount of nodes on a link.
 \item BEB doubles the waiting interval for each successive collision.
 \item Very efficient in practice because the wait time quickly gets large enough to work.
 \end{card}
 
-\begin{card}{Modern ethernet}
+\begin{card}{Modern Ethernet}
 \item Based on switches
-\item Also called switched ethernet.
+\item Also called switched Ethernet.
 \end{card}
 
 \begin{card}[Wireless Multiple Access Control]{WMAC}
@@ -134,18 +134,18 @@
 \end{card}
 
 \begin{card}{Exposed Terminals}
-\item Probel in MAC: ABC topology, if B wants to send while C is sending somewhere, B will think that he can't send.
+\item Problem in MAC: ABC topology, if B wants to send while C is sending somewhere, B will think that he can't send.
 \item Can be solved with MACA
 \end{card}
 
 \begin{card}[Access Point]{AP}
-\item Access point for connectivity with rest of internet in a WiFi schema.
+\item Access point for connectivity with rest of Internet in a WiFi schema.
 \end{card}
 
 \begin{card}{WiFi}
 \item Has a MAC problem for access to access point
 \item CSMA/CA, RTS/CTS optional.
-\item Acks and retransmissions.
+\item ACKs and retransmissions.
 \item Three addresses due to AP
 \item IEEE 802.11
 \end{card}
@@ -162,18 +162,18 @@
 \end{card}
 
 \begin{card}{Switch}
-\item Basis of modern (switched) ethernet.
+\item Basis of modern (switched) Ethernet.
 \item Uses frame addresses to connect input to output ports.
 \item Multiple frames may be switched in parallel.
 \item Need buffers so loss is possible.
-\item More reliable than classic ethernet.
+\item More reliable than classic Ethernet.
 \item Offers scalable performance.
 \item Also called MAC bridge, switching hub or bridging hub
 \end{card}
 
 \begin{card}{Backward learning}
 \item The way that switches find out where to send frames.
-\item To fill the table: look at source adresses on input frames.
+\item To fill the table: look at source addresses on input frames.
 \item To forward: look up or else broadcast.
 \item Works with any number of switches and hubs if there are no loops in the topology (or it uses a switch spanning tree).
 \end{card}
@@ -189,7 +189,7 @@
 \end{card}
 
 \begin{card}[Address Resolution Protocol]{ARP}
-\item Used to map link layer (MAC) addresses to local IP adresses.
+\item Used to map link layer (MAC) addresses to local IP addresses.
 \item Right on top of Ethernet.
 \item Request: Who has IP X.X.X.X? - Reply: I do, at X.X.X.X.X.X.
 \end{card}
@@ -219,7 +219,7 @@
 \item Used by switches
 \end{card}
 
-\begin{card}[Berkley Medium Access Control]{BMAC}
+\begin{card}[Berkeley Medium Access Control]{BMAC}
 \item Very low powered, scalable, decentralized.
 \item Very configurable.
 \item Passive listening.
